@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "marked-highlight": "2.0.4",
+    "aircode-app": "0.2.0",
+    "highlight.js": "11.8.0",
+    "marked": "7.0.3",
+    "aircode": "0.6.1"
+  }
+}
