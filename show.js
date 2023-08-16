@@ -20,14 +20,14 @@ function createSVG(params, options) {
     linkEnd = '</a>';
   }
   return `<svg viewBox="0 0 50 60" xmlns="http://www.w3.org/2000/svg">
-  ${linkStart}<rect x="1" y="1" width="48" height="58" rx="2.5" stroke="${color}" fill="transparent"/>
+  ${linkStart}<rect x="1" y="1" width="48" height="58" rx="2.5" stroke="${options.noborder?'transparent':color}" fill="transparent"/>
   <polygon points="5,25,45,25,25,-5" fill="${color}" transform="scale(0.6)" transform-origin="50% 50%"/>
   <text x="25" y="45" fill="${options.normal}" font-size="16px" alignment-baseline="middle" text-anchor="middle">${numberFormat(params.count)}</text>${linkEnd}
 </svg>`;
 }
 
 module.exports = async function (params, context) {
-  const {id, normal = '#4b587c', upvoted = '#f53f3f', link = false} = params;
+  const {id, normal = '#4b587c', upvoted = '#f53f3f', link = false, noborder = false} = params;
   if(!id) {
     context.status(403);
     return {error: 'invalid id'};
@@ -43,5 +43,5 @@ module.exports = async function (params, context) {
   context.set('X-Content-Type-Options', 'nosniff');
   context.set('content-type', 'image/svg+xml');
   const cookies = context.cookies;
-  return createSVG(record, {normal, upvoted, isUpvoted: !!cookies[`upvoted-${id}`], link, id});
+  return createSVG(record, {normal, upvoted, isUpvoted: !!cookies[`upvoted-${id}`], link, id, noborder});
 };

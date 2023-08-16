@@ -31,6 +31,6 @@ module.exports = async function (params, context) {
   if(context.method === 'GET') {
     context.redirect(redirect);
   } else {
-    return {error: '', id, count};
+    return {error: '', id, count, upvoted: !cookies[_upvoted]};
   }
 };

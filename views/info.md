@@ -51,7 +51,7 @@ upvoteBtn.addEventListener('click', async (event) => {
   <tr>
     <td valign="center">
       <a href="${url}/upvote?id=${params.id}&redirect=https://github.com/[your]/[repo]">
-        <img src="${url}/show?id=${params.id}" width="50">
+        <img src="${url}/show?id=${params.id}&noborder=1" width="50">
       </a> 
     </td>
     <td>Do you like Upvote Anywhere? If you do, please give it an upvote.</td>
