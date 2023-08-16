@@ -34,6 +34,10 @@ upvoteBtn.addEventListener('click', async (event) => {
 </script>
 ```
 
+## Cookie Policy
+
+Since Upvote Anywhere requires using cookies to track upvote status, when it's used on third-party websites and operated through fetch, it relies on the other party's CORS policy. For instance, CodePen's policy doesn't allow cross-site cookies, which means Upvote Anywhere can't record the voted status. However, we can use a GET request to https://wp2aqcqkj5.us.aircode.run/upvote to store the cookie on the original site, then redirect back to the target URL, just as we've done in our GitHub README.
+
 ## Distribution
 
 <img src="https://aircode.io/dashboard-assets/logo_icon_dark.57e92d77.svg"> Upvote Anywhere is build on [AirCode](https://aircode.io/).
