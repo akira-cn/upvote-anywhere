@@ -49,7 +49,7 @@ upvoteBtn.addEventListener('click', async (event) => {
 \`\`\`html
 <table>
   <tr>
-    <td valign="center">
+    <td valign="center" width="70">
       <a href="${url}/upvote?id=${params.id}&redirect=https://github.com/[your]/[repo]">
         <img src="${url}/show?id=${params.id}&noborder=1" width="50">
       </a> 
